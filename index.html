@@ -3,10 +3,10 @@
     <head>
         <title>Which JS Framework? v2</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-<!-- 
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
- -->
+
+        <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> -->
+
         <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
@@ -15,10 +15,12 @@
         <script src="src.js" type="text/babel"></script>
 
         <script type="text/babel">
-            ReactDOM.render(
-                <Viewport/>,
-                document.getElementById('root')
-            );
+            fetchData().then(function(data){
+                ReactDOM.render(
+                    <Viewport data={data}/>,
+                    document.getElementById('root')
+                );
+            });
         </script>
     </head>
     <body>
