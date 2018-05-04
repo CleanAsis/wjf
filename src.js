@@ -2,12 +2,10 @@ const fetchData = async () => await(await fetch('data.json')).json()
 
 class Viewport extends React.Component {
     render() {
-        let dom = [];
-        dom.push(<h1 key="HV">Hello Viewport</h1>);
-        this.props.data.array.forEach(v => 
-            dom.push(<Card key={v} text={v}/>)
-        );
-        return dom;
+        return [
+            <h1 key="HV">Hello World</h1>,
+           ...this.props.data.array.map(v => <Card key={v} text={v}/>)
+         ];
     }
 }
 
